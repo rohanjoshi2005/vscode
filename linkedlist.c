@@ -62,9 +62,11 @@ int main()
             newnode = (struct node *)malloc(sizeof(struct node));
             newnode->data = last;
             newnode->link = NULL;
-            ptr->link = newnode;
-            ptr=newnode;
-            ptr=head;
+            ptr = head; 
+            while (ptr->link != NULL) {
+                ptr = ptr->link; 
+            }
+            ptr->link = newnode; 
             break;
 
         case 3:
